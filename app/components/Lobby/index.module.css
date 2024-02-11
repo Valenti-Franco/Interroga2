@@ -1,0 +1,17 @@
+/* @keyframes float {
+    0% {
+      transform: translatey(0px);
+    }
+    50% {
+      transform: translatey(-20px);
+    }
+    100% {
+      transform: translatey(0px);
+    }
+  }
+  
+  .icon {
+    z-index: -1;
+    width: 100%;
+    animation: float 5s ease-in-out infinite;
+  } */
