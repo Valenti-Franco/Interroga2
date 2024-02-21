@@ -28,29 +28,28 @@ const BgAnimation = () => {
     <Football key="football" />,
   ];
   const [num, setNum] = useState(Math.floor(Math.random() * icons.length));
-  useEffect(() => {
-    const handleResize = () => {
-      setWidth(window.innerWidth);
-      setHeight(window.innerHeight);
-    };
+  const handleResize = () => {
+    setWidth(window.innerWidth);
+    setHeight(window.innerHeight);
+  };
 
+  useEffect(() => {
     const interval = setInterval(() => {
       setNum(Math.random());
     }, 10000);
 
     window.addEventListener("resize", handleResize);
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
+    handleResize();
   }, []);
 
   const elements = Array.from({ length: 7 }).map((_, i) => ({
     id: i,
-    x: Math.random() * width + num,
-    y: Math.random() * height + num,
-    icon: icons[Math.floor(Math.random() * icons.length)],
+    x: Math.random() * width,
+    y: Math.random() * height,
+    icon: icons[i % icons.length],
   }));
+  // console.log(width);
+  // console.log(elements);
 
   return (
     <div>
